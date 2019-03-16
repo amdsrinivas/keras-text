@@ -137,6 +137,8 @@ sudo pip install keras-text
 keras-text uses the excellent spacy library for tokenization. See instructions on how to 
 [download model](https://spacy.io/docs/usage/models#download) for target language.
 
+## Modifications
+- Modified by [A.M.D. Srinivas](https://github.com/amdsrinivas) to solve few issues.
 
 ## Citation
 
