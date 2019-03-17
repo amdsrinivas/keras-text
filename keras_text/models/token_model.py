@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from keras.layers import Input, Embedding, Dense
+from keras.layers import Input, Embedding, Dense, Flatten
 from keras.models import Model
 
 from ..embeddings import get_embeddings_index, build_embedding_weights
@@ -75,5 +75,6 @@ class TokenModelFactory(object):
         sequence_input = Input(shape=(self.max_tokens,), dtype='int32')
         x = embedding_layer(sequence_input)
         x = token_encoder_model(x)
+        x = Flatten()(x)
         x = Dense(self.num_classes, activation=output_activation)(x)
         return Model(sequence_input, x)
